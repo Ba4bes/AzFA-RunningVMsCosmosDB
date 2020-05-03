@@ -1,4 +1,26 @@
 using namespace System.Net
+<#
+.SYNOPSIS
+    This function collects running virtual machines and stores them in a Cosmos DB.
+.DESCRIPTION
+    The VMs that are currently running are collected from the Azure subscription.
+    A check is done if the VM already exists in the Cosmos DB.
+    If not, it is added.
+    A http response is send to confirm if the action succeeded.
+.INPUTS
+    HTTP Trigger
+    Cosmos DB
+.OUTPUTS
+    Cosmos DB
+    HTTP response
+.NOTES
+    This is part of an Azure Function App made to demonstrate the connection with Cosmos DB.
+    Made by Barbara Forbes
+    @Ba4bes
+    4bes.nl
+.LINK
+    https://4bes.nl/2020/05/03/configure-azure-powershell-function-apps-with-cosmos-db/
+#>
 
 # Input bindings are passed in via param block.
 param($Request, $TriggerMetadata, $CosmosDBInput)
